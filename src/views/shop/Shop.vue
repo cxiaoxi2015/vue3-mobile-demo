@@ -11,6 +11,7 @@
     </div>
     <ShopInfo :item="item" :hide-border="true" v-show="item.imgUrl" />
     <Content />
+    <Cart />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { get } from '../../utils/request'
 import ShopInfo from '../../components/ShopInfo'
 import Content from './Content'
+import Cart from './Cart'
 
 // 获取当前商品信息
 const useShopInfoEffect = () => {
@@ -53,7 +55,8 @@ export default {
   name: 'Shop',
   components: {
     ShopInfo,
-    Content
+    Content,
+    Cart
   },
   setup() {
     const { item, getItemData } = useShopInfoEffect()
